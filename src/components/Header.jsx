@@ -4,7 +4,7 @@ import { format } from "date-fns";
 
 const Header = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 mt-5">
+    <div className="flex flex-col items-center justify-center gap-3 my-5">
       <img className="w-[350px]" src={logo} alt="logo" />
       <p className="text-accent">Journalism Without Fear or Favour</p>
       <p className="text-accent font-semibold">

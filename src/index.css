@@ -17,6 +17,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-a.active {
+.left_side_bar a.active {
   @apply bg-gray-200;
 }

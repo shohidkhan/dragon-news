@@ -77,7 +77,7 @@ const CategoryNews = () => {
               Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine,
               United States, Worthy News (Worthy News) – U.S. President Joe
               Biden has announced nearly $3 billion in new U.S. military
-              <Link className="text-blue-500" to={`/news/${news.id}`}>
+              <Link className="text-blue-500" to={`/news-details/${news.id}`}>
                 ... Read More
               </Link>
             </p>
