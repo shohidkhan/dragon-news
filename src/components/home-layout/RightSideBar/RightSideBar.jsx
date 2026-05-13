@@ -4,7 +4,7 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 
 const RightSideBar = () => {
   return (
-    <div>
+    <div className="sticky top-0 pt-5">
       <SocialLogin></SocialLogin>
       <SocialMedia></SocialMedia>
     </div>
