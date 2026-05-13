@@ -90,6 +90,7 @@ const CategoryNews = () => {
                   <FaStar fill="#FF8C47" />
                   <FaStar fill="#FF8C47" />
                 </div>
+
                 <div>{news.rating.number}</div>
               </div>
               <div className="flex gap-2 items-center">
