@@ -3,7 +3,7 @@ import Categories from "../../Categories";
 
 const LeftSideBar = () => {
   return (
-    <div>
+    <div className="sticky top-0 pt-5">
       <Suspense
         fallback={<span className="loading loading-bars loading-xl"></span>}
       >
