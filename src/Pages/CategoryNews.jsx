@@ -46,6 +46,7 @@ const CategoryNews = () => {
                   alt=""
                 />
               </div>
+
               <div>
                 <p className="font-semibold text-sm">{news.author.name}</p>
                 <p className="text-xs text-accent">
