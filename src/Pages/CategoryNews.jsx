@@ -9,6 +9,7 @@ const CategoryNews = () => {
   useEffect(() => {
     if (id === "0") {
       setCategoryNews(data);
+
       return;
     } else if (id === "1") {
       const filteredData = data.filter(
