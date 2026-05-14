@@ -1,11 +1,32 @@
-import React, { use } from "react";
+import React, { use, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-  const { signInUser } = use(AuthContext);
+  const { signInUser, forgetPassword } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef();
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      return alert("Please enter your email");
+    }
+    forgetPassword(email)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+        alert("Password reset email sent");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorCode, errorMessage);
+        // ..
+      });
+    // alert(email);
+  };
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,6 +54,7 @@ const Login = () => {
                 type="email"
                 required
                 name="email"
+                ref={emailRef}
                 className="input"
                 placeholder="Email"
               />
@@ -45,7 +67,9 @@ const Login = () => {
                 placeholder="Password"
               />
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <a onClick={handleForgetPassword} className="link link-hover">
+                  Forgot password?
+                </a>
               </div>
               <button type="submit" className="btn btn-neutral mt-4">
                 Login

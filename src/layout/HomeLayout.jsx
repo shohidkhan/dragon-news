@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useLoaderData } from "react-router";
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
 import Navbar from "../components/Navbar";
@@ -7,12 +7,13 @@ import RightSideBar from "../components/home-layout/RightSideBar/RightSideBar";
 import LeftSideBar from "../components/home-layout/LeftSideBar/LeftSideBar";
 
 const HomeLayout = () => {
+  const data = useLoaderData();
   return (
     <div>
       <header>
         <Header className=""></Header>
         <section className="w-11/12 mx-auto">
-          <LatestNews></LatestNews>
+          <LatestNews data={data}></LatestNews>
         </section>
         <section className="w-11/12 mx-auto">
           <Navbar></Navbar>

@@ -1,10 +1,10 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import userIcon from "../assets/user.png";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-  const { user, logoutUser } = use(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser()
@@ -22,7 +22,15 @@ const Navbar = () => {
         <NavLink to="/career">Career</NavLink>
       </div>
       <div className="flex items-center gap-3 login-btn">
-        <img src={userIcon} alt="user" />
+        {user ? (
+          <img
+            src={user.photoURL || userIcon}
+            alt="user"
+            className="w-10 rounded-full"
+          />
+        ) : (
+          <img src={userIcon} alt="user" className="w-10 rounded-full" />
+        )}
         {user ? (
           <button
             onClick={handleLogout}

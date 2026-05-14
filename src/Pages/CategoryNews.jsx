@@ -73,22 +73,23 @@ const CategoryNews = () => {
               />
             </div>
             <p className="py-4 border-b border-gray-300 text-justify">
-              Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro,
-              Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine,
-              United States, Worthy News (Worthy News) – U.S. President Joe
-              Biden has announced nearly $3 billion in new U.S. military
-              <Link className="text-blue-500" to={`/news-details/${news.id}`}>
+              {news.details.slice(0, 100)}
+              <Link
+                className="text-secondary font-semibold"
+                to={`/news-details/${news.id}`}
+              >
                 ... Read More
               </Link>
             </p>
             <div className="flex justify-between items-center mt-3">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1">
-                  <FaStar fill="#FF8C47" />
-                  <FaStar fill="#FF8C47" />
-                  <FaStar fill="#FF8C47" />
-                  <FaStar fill="#FF8C47" />
-                  <FaStar fill="#FF8C47" />
+                  {Array.from({ length: Math.round(news.rating.number) }).map(
+                    (_, index) => (
+                      <FaStar key={index} fill="#FF8C47" />
+                    ),
+                  )}
+                  {/* <FaStar fill="#FF8C47" /> */}
                 </div>
 
                 <div>{news.rating.number}</div>
